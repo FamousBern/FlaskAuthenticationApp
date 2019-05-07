@@ -1,0 +1,148 @@
+{% extends 'base.html' %} {% block head %}
+{{ super() }}
+<style rel="stylesheet" type="text/css">
+  body {
+    margin: 0;
+  }
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+  .log-btn {
+    padding: 5px 20px;
+    border: none;
+    border: 1px solid #00e1ff;
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: 10px;
+    color: #00e1ff;
+  }
+  header {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  header ul {
+    list-style: none;
+    width: 800px;
+    text-align: left;
+    margin: auto;
+    box-sizing: border-box;
+  }
+
+  header ul li {
+    display: inline;
+    margin: auto 5px;
+    box-sizing: border-box;
+  }
+  header ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #2e4158;
+  }
+
+  .ul {
+    background: #2e4158;
+    list-style: none;
+    color: #fff;
+    padding: 10px;
+    border-left: 3px solid #00e1ff;
+    margin: 10px auto;
+  }
+  h2 {
+    font-weight: 400;
+    color: #fa03a8;
+  }
+  .box {
+    background-image: linear-gradient(
+      to right,
+      rgb(187, 4, 126),
+      rgb(147, 18, 233)
+    );
+    padding: 20px;
+    color: #9b9b9b;
+  }
+  .box-child-1 {
+    background: #ffffff;
+    border-radius: 3px 3px 0px 0px;
+    padding: 20px;
+    font-size: 14px;
+    margin: auto;
+  }
+  .box-child-2 {
+    background: #ffffff;
+    border-radius: 0px 0px 3px 3px;
+    padding: 20px;
+    font-size: 14px;
+    margin: auto;
+  }
+
+  .ul li {
+    display: block;
+  }
+
+  .author {
+    background: #070707;
+    margin: 10px auto;
+    color: #fff;
+    padding: 10px;
+  }
+
+  .author h1 {
+    color: #ffe600;
+  }
+  /*media largr screens */
+  @media (min-width: 700px) {
+    .box {
+      margin: auto;
+      width: 800px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .box-child-1 {
+      height: 200px;
+      border-radius: 3px;
+    }
+    .box-child-2 {
+      height: 200px;
+      text-align: center;
+      border-radius: 3px;
+    }
+
+    header ul {
+      text-align: right;
+    }
+  }
+</style>
+{% endblock %} {% block content %}
+
+<div class="box">
+  <div class="box-child-1">
+    <h2>Flask App</h2>
+    <p>Flask is a microframework built from python programming language.</p>
+  </div>
+  <div class="box-child-2">
+    <h2>Implementation of this App</h2>
+    <p>This app will enable you to do the following:</p>
+    <ul class="ul">
+      <li>Register for an account.</li>
+      <li>Login.</li>
+      <li>Logout.</li>
+    </ul>
+  </div>
+  <div class="author">
+    <p>Created by:</p>
+    <h1>BERN</h1>
+    <p>Software developer</p>
+    <p>Am a software developer by profession and mathematicians by fun.</p>
+  </div>
+</div>
+
+<div style="height: 500px;"></div>
+
+{% endblock %}

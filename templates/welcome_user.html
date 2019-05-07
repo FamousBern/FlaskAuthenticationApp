@@ -1,0 +1,175 @@
+{% extends 'base.html' %} {% block head %}
+{{ super() }}
+<style rel="stylesheet" type="text/css">
+  body {
+    margin: 0;
+    overflow: hidden;
+  }
+  .log-btn {
+    padding: 5px 20px;
+    border: none;
+    border: 1px solid #00e1ff;
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: 10px;
+    color: #00e1ff;
+  }
+  header {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  header ul {
+    list-style: none;
+    width: 800px;
+    text-align: left;
+    margin: auto;
+    box-sizing: border-box;
+  }
+
+  header ul li {
+    display: inline;
+    margin: auto 5px;
+    box-sizing: border-box;
+  }
+  header ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #2e4158;
+  }
+
+  .ul {
+    background: #2e4158;
+    list-style: none;
+    color: #fff;
+    padding: 10px;
+    border-left: 3px solid #00e1ff;
+    margin: 10px auto;
+  }
+  h2 {
+    font-weight: 400;
+    color: #fa03a8;
+  }
+  .box {
+    background-color: #0c7e1b;
+    margin: 20px auto;
+    padding: 20px;
+    color: #9b9b9b;
+  }
+  .box-child-1 {
+    background: #ffffff;
+    border-radius: 3px 3px 0px 0px;
+    padding: 20px;
+    width: 200px;
+    margin: auto;
+    font-size: 14px;
+  }
+  .box-child-2 {
+    background: #ffffff;
+    border-radius: 0px 0px 3px 3px;
+    padding: 20px;
+    width: 200px;
+    margin: auto;
+    font-size: 14px;
+  }
+
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+  .contact-form {
+    margin: 70px auto;
+    padding: 10px 10px;
+    border-radius: 5px;
+    width: 100%;
+    background: #02cfeb;
+  }
+  .form-label-control {
+    display: block;
+    text-align: left;
+    color: #f2f2f2;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+  }
+  .form-group {
+    margin: 3px;
+  }
+
+  form {
+    margin: auto;
+    padding: 10px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin: 10px;
+    border-radius: 3px;
+    background: #ffd900;
+    cursor: pointer;
+  }
+
+  .well {
+    margin: 70px auto;
+    background: rgb(0, 145, 137);
+    width: 300px;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 3px;
+  }
+
+  .well h1 {
+    font-weight: 400;
+  }
+  /*media largr screens */
+  @media (min-width: 700px) {
+    .box {
+      margin: auto;
+      width: 800px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .box-child-1 {
+      height: 200px;
+      border-radius: 3px;
+    }
+    .box-child-2 {
+      height: 200px;
+      text-align: center;
+      border-radius: 3px;
+    }
+
+    header ul {
+      text-align: right;
+    }
+  }
+</style>
+{% endblock %} {% block content %}
+
+<div class="container">
+  <div class="well">
+    {% if current_user.is_authenticated %}
+    <h1>Welcome user {{ current_user.username }}!</h1>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
